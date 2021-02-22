@@ -31,6 +31,12 @@
   });
 
 
+  setTimeout(function(){
+   resizeSVG()
+  }, 100);
+
+
+
   window.addEventListener('resize', function(event){
 
     var svg = document.getElementsByTagName('svg')[0];
@@ -42,7 +48,6 @@
       svg.style.width = "auto"
       var offset = (svg.getBoundingClientRect().width - window.innerWidth)/-2
       svg.style.transform = "translateX(" + offset + "px)"
-//      svg.style.transform = "translateY(0px)"
 
     } else {
       //console.log("width bigger");
@@ -51,8 +56,28 @@
       svg.style.width = "100%"
       var offset = (svg.getBoundingClientRect().height - window.innerHeight)/-2
       svg.style.transform = "translateY(" + offset + "px)"
-//      svg.style.transform = "translateX(0px)"
     }
   });
+
+  function resizeSVG(){
+    var svg = document.getElementsByTagName('svg')[0];
+
+
+    if (window.innerWidth/window.innerHeight <= 1.77){
+      //height bigger"
+      svg.style.height = "100%"
+      svg.style.width = "auto"
+      var offset = (svg.getBoundingClientRect().width - window.innerWidth)/-2
+      svg.style.transform = "translateX(" + offset + "px)"
+
+    } else {
+      //console.log("width bigger");
+
+      svg.style.height = "auto"
+      svg.style.width = "100%"
+      var offset = (svg.getBoundingClientRect().height - window.innerHeight)/-2
+      svg.style.transform = "translateY(" + offset + "px)"
+    }
+  }
 
 </script>
