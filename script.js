@@ -7,6 +7,8 @@ var animItem = bodymovin.loadAnimation({
 });
 var audio = new Audio('sick_short.mp3');
 audio.volume = 0.2;
+var description = document.getElementById("description")
+var infoDiv = document.getElementById("info")
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   createCookie("audioMuted", "true", 7)
@@ -16,6 +18,9 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   var muteBtn = document.getElementById("muteBtn")
   muteBtn.style.width = "44px"
   muteBtn.style.height = "44px"
+  muteBtn.style.margin = "32px"
+
+  infoDiv.style.fontSize = "20px"
 
 }
 
@@ -48,8 +53,7 @@ function chechAudioCooke(){
   }
 }
 
-var description = document.getElementById("description")
-var infoDiv = document.getElementById("info")
+
 
 infoDiv.style.right = - description.getBoundingClientRect().width + "px"
 
