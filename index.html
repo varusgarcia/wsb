@@ -12,11 +12,33 @@
     overflow: hidden;
     background-color: #000;
   }
+  a {
+    color: white;
+  }
+  a:hover{
+    color: #E100FF;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin: 20px;
+    font-family: Helvetica;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+    transition: 1s;
+  }
 
 </style>
 
+<input id="muteBtn" type="image" src="unmuted.svg" style="outline: none; position: absolute; bottom: 0px; margin: 20px; z-index: 1;" onclick="mute()"></input>
 
+<p id="description" >made with <a target="_blank" href="https://www.sketch.com/">Sketch</a>, <a target="_blank" href="https://www.adobe.com/products/aftereffects.html">After Effects</a> and <a target="_blank" href="https://airbnb.design/lottie/">Lottie</a> by <a target="_blank" href="reddit.com/u/varusgarcia">u/varusgarcia</a></p>
 <div id="svgContainer"></div>
+
+
 
 <script src="lottie.js" type="text/javascript">
 
@@ -29,13 +51,37 @@
     loop: true,
     path: 'wsb-1.json'
   });
+  var audio = new Audio('sick_short.mp3');
+  var muted = false
 
+  animItem.addEventListener('DOMLoaded', function(e) {
+    resizeSVG()
 
-  setTimeout(function(){
-   resizeSVG()
-  }, 100);
+    audio.play();
+  })
 
+  animItem.addEventListener('loopComplete', function (e) {
+    audio.pause();
+    audio.currentTime = 0;
+    audio.play();
+  })
 
+ var muteBtn = document.getElementById("muteBtn");
+ var description = document.getElementById("description")
+  function mute(){
+    if (muted == false){
+      audio.muted = true
+      muted = true
+      muteBtn.src = "muted.svg"
+      description.style.opacity = "0"
+    }else {
+      audio.muted = false
+      muted = false
+      muteBtn.src = "unmuted.svg"
+      description.style.opacity = "1"
+    }
+
+  }
 
   window.addEventListener('resize', function(event){
 
