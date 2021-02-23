@@ -20,6 +20,7 @@ a:hover{
 }
 
 #info {
+  overflow: hidden;
   position: absolute;
   bottom: 0px;
   right: -1000px;
