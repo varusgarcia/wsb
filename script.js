@@ -15,12 +15,13 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   var infoBtn = document.getElementById("infoBtn")
   infoBtn.style.width = "44px"
   infoBtn.style.height = "44px"
+  infoBtn.style.paddingTop = "20px"
   var muteBtn = document.getElementById("muteBtn")
   muteBtn.style.width = "44px"
   muteBtn.style.height = "44px"
   muteBtn.style.margin = "32px"
-
-  infoDiv.style.fontSize = "20px"
+  info.style.bottom = "15px"
+  description.style.fontSize = "20px"
 
 }
 
