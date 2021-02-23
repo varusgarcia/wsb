@@ -8,12 +8,24 @@ var animItem = bodymovin.loadAnimation({
 var audio = new Audio('sick_short.mp3');
 audio.volume = 0.2;
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  createCookie("audioMuted", "true", 7)
+  var infoBtn = document.getElementById("infoBtn")
+  infoBtn.style.width = "44px"
+  infoBtn.style.height = "44px"
+  var muteBtn = document.getElementById("muteBtn")
+  muteBtn.style.width = "44px"
+  muteBtn.style.height = "44px"
+
+}
 
 animItem.addEventListener('DOMLoaded', function(e) {
   resizeSVG()
   audio.play();
   chechAudioCooke()
 })
+
+
 
 animItem.addEventListener('loopComplete', function (e) {
   audio.pause();
