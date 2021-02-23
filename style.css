@@ -10,6 +10,7 @@ html {
   height: 100%;
   overflow: hidden;
   background-color: #000;
+  margin: 0px;
 }
 a {
   color: white;
@@ -18,14 +19,42 @@ a:hover{
   color: #E100FF;
 }
 
-p {
+#info {
   position: absolute;
   bottom: 0px;
-  right: 0px;
-  margin: 20px;
+  right: -1000px;
+  margin-right: 20px;
   font-family: Helvetica;
   color: white;
   font-size: 14px;
   z-index: 1;
   transition: 1s;
+}
+
+#description{
+  float: right;
+  transition: 1s;
+  opacity: 0;
+  max-width: 100vw;
+  line-height: 20px;
+}
+
+#infoBtn{
+  padding-right: 10px;
+  padding-top: 24px;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  z-index: 1;
+}
+
+
+#muteBtn{
+  height: 20px;
+  width: 20px;
+  outline: none;
+  position: absolute;
+  bottom: 0px;
+  margin: 15px;
+  z-index: 1;
 }
