@@ -35,12 +35,12 @@
 
 <input id="muteBtn" type="image" src="unmuted.svg" style="outline: none; position: absolute; bottom: 0px; margin: 20px; z-index: 1;" onclick="mute()"></input>
 
-<p id="description" >made with <a target="_blank" href="https://www.sketch.com/">Sketch</a>, <a target="_blank" href="https://www.adobe.com/products/aftereffects.html">After Effects</a> and <a target="_blank" href="https://airbnb.design/lottie/">Lottie</a> by <a target="_blank" href="reddit.com/u/varusgarcia">u/varusgarcia</a></p>
+<p id="description" >made with <a target="_blank" href="https://www.sketch.com/">Sketch</a>, <a target="_blank" href="https://www.adobe.com/products/aftereffects.html">After Effects</a> and <a target="_blank" href="https://airbnb.design/lottie/">Lottie</a> by <a target="_blank" href="https://reddit.com/u/varusgarcia">u/varusgarcia</a></p>
 <div id="svgContainer"></div>
 
 
 
-<script src="lottie.js" type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js" type="text/javascript">
 
 </script>
 <script type="text/javascript">
@@ -49,7 +49,7 @@
     wrapper: svgContainer,
     animType: 'svg',
     loop: true,
-    path: 'wsb-1.json'
+    path: 'wsb.json'
   });
   var audio = new Audio('sick_short.mp3');
   var muted = false
